@@ -8,6 +8,7 @@ onready var dungeon = $Dungeon
 func _ready():
 	randomize()
 	generate_level()
+	$Player.position = Vector2(15.5*32, 17.5*32)
 	
 func generate_level():
 	var walker = Walker.new(Vector2(15,17), borders)
