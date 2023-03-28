@@ -8,9 +8,20 @@
 
 config_version=4
 
+_global_script_classes=[ {
+"base": "Node",
+"class": "Walker",
+"language": "GDScript",
+"path": "res://Walker.gd"
+} ]
+_global_script_class_icons={
+"Walker": ""
+}
+
 [application]
 
 config/name="random-maze"
+run/main_scene="res://Level.tscn"
 config/icon="res://icon.png"
 
 [gui]
