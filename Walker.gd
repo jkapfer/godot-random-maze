@@ -27,7 +27,7 @@ func make_map(steps):
 			step_history.append(position)
 		else:
 			change_direction()
-		
+	return step_history
 		
 func take_step():
 	if border.has_point(position+direction):
@@ -36,4 +36,9 @@ func take_step():
 	return false
 	
 func change_direction():
-	pass
+	var possible_dir = DIRECTIONS[direction].duplicate()
+	possible_dir.shuffle()
+	var next_dir = possible_dir.pop_back()
+	while not border.has_point(position + next_dir):
+		next_dir = possible_dir.pop_back()
+	direction = next_dir
